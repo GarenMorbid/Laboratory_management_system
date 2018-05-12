@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.zqwz.lan.dao.ApplyDao">
+	<insert id="submitApplyLab" parameterType="com.zqwz.lan.entity.ApplyLab">
+		insert into applylab (apply_content, lab_id, user_id, apply_state, apply_time, use_time) values(#{apply_content}, #{lab_id}, #{user_id}, #{apply_state}, #{apply_time}, #{use_time})
+	</insert>
+	<insert id="submitApplyDevice" parameterType="com.zqwz.lan.entity.ApplyDevice">
+		insert into applydevice (apply_content, device_id, user_id, apply_state, apply_time) values(#{apply_content}, #{device_id}, #{user_id}, #{apply_state}, #{apply_time})
+	</insert>
+	<select id="findAllApplyLabByID" parameterType="java.lang.String" resultType="com.zqwz.lan.entity.ApplyLab">
+		select * from applylab where apply_id like "%"#{apply_id}"%" and apply_state != "通过"
+	</select>
+	<update id="passApplyLab">
+		update applylab set apply_state = "通过", deal_man = #{deal_man} where apply_id = #{apply_id}
+	</update>
+	<update id="notPassApplyLab">
+		update applylab set apply_state = "申请不通过", deal_man = #{deal_man} where apply_id = #{apply_id}
+	</update>
+	<select id="findAllApplyDeviceByID" parameterType="java.lang.String" resultType="com.zqwz.lan.entity.ApplyDevice">
+		select * from applydevice where apply_id like "%"#{apply_id}"%" and apply_state != "通过"
+	</select>
+	<update id="passApplyDevice">
+		update applydevice set apply_state = "通过", deal_man = #{deal_man} where apply_id = #{apply_id}
+	</update>
+	<update id="notPassApplyDevice">
+		update applydevice set apply_state = "申请不通过", deal_man = #{deal_man} where apply_id = #{apply_id}
+	</update>
+</mapper>

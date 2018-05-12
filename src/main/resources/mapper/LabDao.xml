@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.zqwz.lan.dao.LabDao">
+	<select id="findAllLab" resultType="com.zqwz.lan.entity.Lab">
+		select * from lab
+	</select>
+	<select id="findLabByID" parameterType="int" resultType="com.zqwz.lan.entity.Lab">
+		select * from lab where lab_id = #{lab_id}
+	</select>
+	<select id="findLabByName" parameterType="java.lang.String" resultType="com.zqwz.lan.entity.Lab">
+        select * from lab where lab_id like "%"#{lab_id}"%"
+    </select>
+    <insert id="addLab" parameterType="com.zqwz.lan.entity.Lab">
+    	insert into lab (lab_id, lab_man, lab_state) values(#{lab_id}, #{lab_man}, #{lab_state})
+    </insert>
+    <delete id="deleteLab" parameterType="int">
+    	delete from lab where lab_id = #{lab_id}
+    </delete>
+    <update id="updateLab" parameterType="com.zqwz.lan.entity.Lab">
+    	update lab set lab_man = #{lab_man}, lab_state = #{lab_state} where lab_id = #{lab_id}
+    </update>
+</mapper>

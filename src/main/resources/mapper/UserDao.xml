@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.zqwz.lan.dao.UserDao">
+    <select id="findUserByName" parameterType="java.lang.String" resultType="com.zqwz.lan.entity.User">
+        select * from `user` where user_name like "%"#{username}"%"
+    </select>
+    <select id="VerifyUser" resultType="com.zqwz.lan.entity.User">
+        select * from `user` where user_account = #{user_account} and user_pwd = #{user_pwd}
+    </select>
+    <update id="editInfo" parameterType="com.zqwz.lan.entity.User">
+    	update `user` set user_name = #{user_name}, user_pwd = #{user_pwd}, user_tel = #{user_tel} where user_id = #{user_id}
+    </update>
+    <insert id="addUser" parameterType="com.zqwz.lan.entity.User">
+    	insert into `user` (user_account, user_name, user_pwd, user_type, user_tel) values(#{user_account}, #{user_name}, #{user_pwd}, "用户", #{user_tel})
+    </insert>
+    <delete id="deleteUser" parameterType="int">
+    	delete from `user` where user_id = #{user_id}
+    </delete>
+</mapper>
