@@ -28,6 +28,12 @@
 	<div class="layui-field-box">
             <form class="layui-form" action="../user/updateDevice.action">
                 <div class="layui-form-item">
+                    <label class="layui-form-label">设备号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="device_id" required lay-verify="required" autocomplete="off" class="layui-input u_id" value="${param.device_id }" readonly="readonly">
+                    </div>
+                </div>
+                <div class="layui-form-item">
                     <label class="layui-form-label">设备名</label>
                     <div class="layui-input-block">
                         <input type="text" name="device_name" required lay-verify="required" autocomplete="off" class="layui-input u_id" value="${param.device_name }">

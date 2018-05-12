@@ -72,17 +72,17 @@
   <i class="layui-edge"></i>
 </div>
 <div class="layui-btn-container">
-  <button class="layui-btn layui-btn-radius layui-btn-normal" id="search-btn">搜索</button> 
-  <a href="lab_add.jsp" class="layui-btn layui-btn-radius layui-btn-normal" id="add-btn">新增实验室信息</a>
+  <button class="layui-btn layui-btn-radius layui-btn-normal" id="search-btn">🔍 搜索</button>
+  <a href="lab_add.jsp" class="layui-btn layui-btn-radius layui-btn-normal" id="add-btn">🏡 新增实验室信息</a>
 </div>
 
-<table class="layui-table" id="tb">
+<table class="layui-table" id="tb" style="text-align: center;">
     <thead>
       <tr>
-        <th>实验室号</th>
-        <th>实验室状态</th>
-        <th>负责人</th>
-        <th>操作</th>
+          <th style="text-align: center;">实验室号</th>
+          <th style="text-align: center;">实验室状态</th>
+          <th style="text-align: center;">负责人</th>
+          <th style="text-align: center;">操作</th>
       </tr> 
     </thead>
     <tbody id="content">
@@ -103,7 +103,7 @@
 					inHtml +='<tr><td>'+data[i].lab_id+'</td>';
 					inHtml +='<td>'+data[i].lab_state+'</td>';
 					inHtml +='<td>'+data[i].lab_man+'</td>';
-					inHtml +='<td><a href="lab_edit.jsp?&lab_id='+data[i].lab_id+'&lab_state='+data[i].lab_state+'&lab_man='+data[i].lab_man+'" id="edit" class="layui-btn layui-btn-big">编辑</a><a href="../user/deleteLab.action?&lab_id='+data[i].lab_id+'" id="del" class="layui-btn layui-btn-big">删除</a></td></tr>';
+					inHtml +='<td><a href="lab_edit.jsp?&lab_id='+data[i].lab_id+'&lab_state='+data[i].lab_state+'&lab_man='+data[i].lab_man+'" id="edit" class="layui-btn layui-btn-big">🔨 编辑</a><a href="../user/deleteLab.action?&lab_id='+data[i].lab_id+'" id="del" class="layui-btn layui-btn-danger">🔪 删除</a></td></tr>';
 				}
 				$("#content").html(inHtml);
 			},
@@ -126,7 +126,7 @@
 						inHtml +='<tr><td>'+data.lab_id+'</td>';
 						inHtml +='<td>'+data.lab_state+'</td>';
 						inHtml +='<td>'+data.lab_man+'</td>';
-						inHtml +='<td><a href="lab_edit.jsp?&lab_id='+data.lab_id+'&lab_state='+data.lab_state+'&lab_man='+data.lab_man+'" id="edit" class="layui-btn layui-btn-big">编辑</a><a href="../user/deleteLab.action?&lab_id='+data.lab_id+'" id="del" class="layui-btn layui-btn-big">删除</a></td></tr>';
+						inHtml +='<td><a href="lab_edit.jsp?&lab_id='+data.lab_id+'&lab_state='+data.lab_state+'&lab_man='+data.lab_man+'" id="edit" class="layui-btn layui-btn-big">🔨 编辑</a><a href="../user/deleteLab.action?&lab_id='+data.lab_id+'" id="del" class="layui-btn layui-btn-danger">🔪 删除</a></td></tr>';
 
 						$("#content").html(inHtml);
 					}else {

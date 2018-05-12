@@ -32,7 +32,7 @@
                     <a href="javascript:;" id="headerImg">
                     </a>
                 </li>
-                <li class="layui-nav-item"><a id="cancel" href="logout.action">注销</a></li>
+                <li class="layui-nav-item"><a id="cancel" href="logout.action">🚪 注销</a></li>
             </ul>
         </div>
 
@@ -41,21 +41,21 @@
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree layui-bg-cyan" lay-filter="test">
                     <li class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;">个人信息</a>
+                        <a href="javascript:;">ℹ️ 个人信息</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="../employee/edit_information.jsp" target="main">修改信息</a></dd>
+                            <dd><a href="../employee/edit_information.jsp" target="main">ℹ️ 修改信息</a></dd>
                         </dl>
                     </li>
                  	<li class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;">实验室操作</a>
+                        <a href="javascript:;">🏘️ 实验室操作</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="../employee/lab.jsp" target="main">查看实验室信息</a></dd>
+                            <dd><a href="../employee/lab.jsp" target="main">🏘️ 查看实验室信息</a></dd>
                         </dl>
                  	</li>
                  	<li class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;">设备操作</a>
+                        <a href="javascript:;">🔬 设备操作</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="../employee/device.jsp" target="main">查看所有设备信息</a></dd>
+                            <dd><a href="../employee/device.jsp" target="main">🔬 查看所有设备信息</a></dd>
                         </dl>
                  	</li>
                 </ul>
@@ -69,7 +69,7 @@
 
         <div class="layui-footer">
             <!-- 底部固定区域 -->
-            © hdq.top - 底部固定区域
+            Powered by <a href="https://blog.hdqyf.club/" style="text-decoration: none;color: #00F7DE;">ZQWZ</a> Theme <a href="https://blog.hdqyf.club/" style="text-decoration: none;color: #00F7DE;">Garen</a> @2018 Garen
         </div>
     </div>
     <script src="../layui/layui.all.js"></script>

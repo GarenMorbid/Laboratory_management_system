@@ -24,4 +24,7 @@ public interface ApplyDao {
 
 	public void notPassApplyDevice(@Param(value = "apply_id") int apply_id, @Param(value = "deal_man") String deal_man);
 
+    public int labCount();
+
+	public int deviceCount();
 }

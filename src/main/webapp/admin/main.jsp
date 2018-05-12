@@ -32,7 +32,7 @@
                     <a href="javascript:;" id="headerImg">
                     </a>
                 </li>
-                <li class="layui-nav-item"><a id="cancel" href="logout.action">注销</a></li>
+                <li class="layui-nav-item"><a id="cancel" href="logout.action">🚪 注销</a></li>
             </ul>
         </div>
 
@@ -41,35 +41,35 @@
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree layui-bg-cyan" lay-filter="test">
                     <li class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;">用户管理</a>
+                        <a href="javascript:;">🧖 用户管理</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="../admin/user.jsp" target="main">查询用户</a></dd>
+                            <dd><a href="../admin/user.jsp" target="main">🧖 查询用户</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;">设备管理</a>
+                        <a href="javascript:;">🏘️ 实验室管理</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="../admin/device.jsp" target="main">查询设备信息</a></dd>
+                            <dd><a href="../admin/lab.jsp" target="main">🏘️ 查询实验室信息</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">🔬 设备管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="../admin/device.jsp" target="main">🔬 查询设备信息</a></dd>
                         </dl>
                  	</li>
                  	<li class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;">审批模块</a>
+                        <a href="javascript:;">✌ 审批模块</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="../admin/apply_device.jsp" target="main">设备维修申请审批</a></dd>
-                            <dd><a href="../admin/apply_lab.jsp" target="main">实验室申请审批</a></dd>
+                            <dd><a href="../admin/apply_device.jsp" target="main">✌ 设备维修申请审批</a></dd>
+                            <dd><a href="../admin/apply_lab.jsp" target="main">✌ 实验室申请审批</a></dd>
                         </dl>
                  	</li>
                  	<li class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;">实验室管理</a>
+                        <a href="javascript:;">📋 统计报表</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="../admin/lab.jsp" target="main">查询实验室信息</a></dd>
-                        </dl>
-                 	</li>
-                 	<li class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;">统计报表</a>
-                        <dl class="layui-nav-child">
-                            <dd><a href="" target="main">实验室使用次数</a></dd>
-                            <dd><a href="" target="main">设备使用次数</a></dd>
+                            <dd><a href="../admin/charts_lab.jsp" target="main">📋 实验室历史借用总次数</a></dd>
+                            <dd><a href="../admin/charts_device.jsp" target="main">📋 设备历史借用总次数</a></dd>
                         </dl>
                  	</li>
                 </ul>
@@ -83,7 +83,7 @@
 
         <div class="layui-footer">
             <!-- 底部固定区域 -->
-            © hdq.top - 底部固定区域
+            Powered by <a href="https://blog.hdqyf.club/" style="text-decoration: none;color: #00F7DE;">ZQWZ</a> Theme <a href="https://blog.hdqyf.club/" style="text-decoration: none;color: #00F7DE;">Garen</a> @2018 Garen
         </div>
     </div>
     <script src="../layui/layui.all.js"></script>

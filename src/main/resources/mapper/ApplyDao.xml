@@ -12,18 +12,26 @@
 		select * from applylab where apply_id like "%"#{apply_id}"%" and apply_state != "通过"
 	</select>
 	<update id="passApplyLab">
-		update applylab set apply_state = "通过", deal_man = #{deal_man} where apply_id = #{apply_id}
+		update applylab set apply_state = "通过", deal_man = #{deal_man} where apply_id = #{apply_id};
+		update lab set lab_state = "已借出" where lab_id = (select lab_id from applydevice where apply_id = #{apply_id});
 	</update>
 	<update id="notPassApplyLab">
-		update applylab set apply_state = "申请不通过", deal_man = #{deal_man} where apply_id = #{apply_id}
+		update applylab set apply_state = "申请不通过", deal_man = #{deal_man} where apply_id = #{apply_id};
 	</update>
 	<select id="findAllApplyDeviceByID" parameterType="java.lang.String" resultType="com.zqwz.lan.entity.ApplyDevice">
 		select * from applydevice where apply_id like "%"#{apply_id}"%" and apply_state != "通过"
 	</select>
 	<update id="passApplyDevice">
-		update applydevice set apply_state = "通过", deal_man = #{deal_man} where apply_id = #{apply_id}
+		update applydevice set apply_state = "通过", deal_man = #{deal_man} where apply_id = #{apply_id};
+		update device set device_state = "已借出" where device_id = (select device_id from applydevice where apply_id = #{apply_id});
 	</update>
 	<update id="notPassApplyDevice">
 		update applydevice set apply_state = "申请不通过", deal_man = #{deal_man} where apply_id = #{apply_id}
 	</update>
+	<select id="labCount" resultType="INTEGER">
+		select count(*) from lab
+	</select>
+	<select id="deviceCount" resultType="INTEGER">
+		select count(*) from device
+	</select>
 </mapper>

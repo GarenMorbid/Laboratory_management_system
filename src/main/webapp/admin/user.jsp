@@ -72,19 +72,19 @@
   <i class="layui-edge"></i>
 </div>
 <div class="layui-btn-container">
-  <button class="layui-btn layui-btn-radius layui-btn-normal" id="search-btn">搜索</button> 
-  <a href="user_add.jsp" class="layui-btn layui-btn-radius layui-btn-normal" id="add-btn">新增用户信息</a>
+  <button class="layui-btn layui-btn-radius layui-btn-normal" id="search-btn">🔍 搜索</button>
+  <a href="user_add.jsp" class="layui-btn layui-btn-radius layui-btn-normal" id="add-btn">🤷 新增用户信息</a>
 </div>
 
-<table class="layui-table" id="tb">
+<table class="layui-table" id="tb" style="text-align: center;">
     <thead>
       <tr>
-        <th>用户名</th>
-        <th>用户账户</th>
-        <th>用户电话</th>
-        <th>员工类型</th>
-        <th>密码</th>
-        <th>操作</th>
+        <th style="text-align: center;">用户名</th>
+        <th style="text-align: center;">用户账户</th>
+        <th style="text-align: center;">用户电话</th>
+        <th style="text-align: center;">员工类型</th>
+        <th style="text-align: center;">密码</th>
+        <th style="text-align: center;">操作</th>
       </tr> 
     </thead>
     <tbody id="content">
@@ -107,7 +107,7 @@
 					inHtml +='<td>'+data[i].user_tel+'</td>';
 					inHtml +='<td>'+data[i].user_type+'</td>';
 					inHtml +='<td>'+data[i].user_pwd+'</td>';
-					inHtml +='<td><a href="../user/deleteUser.action?&user_id='+data[i].user_id+'" id="del" class="layui-btn layui-btn-big">删除</a></td></tr>';
+					inHtml +='<td><a href="../user/deleteUser.action?&user_id='+data[i].user_id+'" id="del" class="layui-btn layui-btn-danger">🔪 删除</a></td></tr>';
 				}
 				$("#content").html(inHtml);
 			},
@@ -132,7 +132,7 @@
 						inHtml +='<td>'+data[i].user_tel+'</td>';
 						inHtml +='<td>'+data[i].user_type+'</td>';
 						inHtml +='<td>'+data[i].user_pwd+'</td>';
-						inHtml +='<td><a href="../user/deleteUser.action?&user_id='+data[i].user_id+'" id="del" class="layui-btn layui-btn-big">删除</a></td></tr>';
+						inHtml +='<td><a href="../user/deleteUser.action?&user_id='+data[i].user_id+'" id="del" class="layui-btn layui-btn-danger">🔪 删除</a></td></tr>';
 					}
 					$("#content").html(inHtml);
 				},

@@ -72,20 +72,20 @@
   <i class="layui-edge"></i>
 </div>
 <div class="layui-btn-container">
-  <button class="layui-btn layui-btn-radius layui-btn-normal" id="search-btn">搜索</button> 
+  <button class="layui-btn layui-btn-radius layui-btn-normal" id="search-btn">🔍 搜索</button>
 </div>
 
-<table class="layui-table" id="tb">
+<table class="layui-table" id="tb" style="text-align: center;">
     <thead>
       <tr>
-        <th>工单号</th>
-        <th>申请人工号</th>
-        <th>申请时间</th>
-        <th>申请理由</th>
-        <th>申请教室号</th>
-        <th>申请状态</th>
-        <th>处理人</th>
-        <th>操作</th>
+        <th style="text-align: center;">工单号</th>
+        <th style="text-align: center;">申请人工号</th>
+        <th style="text-align: center;">申请时间</th>
+        <th style="text-align: center;">申请理由</th>
+        <th style="text-align: center;">申请教室号</th>
+        <th style="text-align: center;">申请状态</th>
+        <th style="text-align: center;">处理人</th>
+        <th style="text-align: center;">操作</th>
       </tr> 
     </thead>
     <tbody id="content">
@@ -103,14 +103,16 @@
 			success: function(data){
 				var inHtml="";
 				for(var i=0;i<data.length;i++){
+                    var date = new Date(data[i].apply_time);
 					inHtml +='<tr><td>'+data[i].apply_id+'</td>';
 					inHtml +='<td>'+data[i].user_id+'</td>';
-					inHtml +='<td>'+data[i].apply_time+'</td>';
+                    inHtml += '<td>' + date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日 ' + date.getHours() +
+                        '时' + date.getMinutes() + '分' + date.getTime() % 60000 / 1000 + '秒' + '</td>';
 					inHtml +='<td>'+data[i].apply_content+'</td>';
 					inHtml +='<td>'+data[i].lab_id+'</td>';
 					inHtml +='<td>'+data[i].apply_state+'</td>';
 					inHtml +='<td>'+data[i].deal_man+'</td>';
-					inHtml +='<td><a href="../user/passApplyLab.action?&apply_id='+data[i].apply_id+'" id="edit" class="layui-btn layui-btn-big">通过</a><a href="../user/notPassApplyLab.action?&apply_id='+data[i].apply_id+'" id="del" class="layui-btn layui-btn-big">不通过</a></td></tr>';
+					inHtml +='<td><a href="../user/passApplyLab.action?&apply_id='+data[i].apply_id+'" id="edit" class="layui-btn layui-btn-big">👌 通过</a><a href="../user/notPassApplyLab.action?&apply_id='+data[i].apply_id+'" id="del" class="layui-btn layui-btn-danger">⛔ 不通过</a></td></tr>';
 				}
 				$("#content").html(inHtml);
 			},
@@ -130,9 +132,11 @@
 				success: function(data){
 					var inHtml="";
 					for(var i=0;i<data.length;i++){
+                        var date = new Date(data[i].apply_time);
 						inHtml +='<tr><td>'+data[i].apply_id+'</td>';
 						inHtml +='<td>'+data[i].user_id+'</td>';
-						inHtml +='<td>'+data[i].apply_time+'</td>';
+                        inHtml += '<td>' + date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日 ' + date.getHours() +
+                            '时' + date.getMinutes() + '分' + date.getTime() % 60000 / 1000 + '秒' + '</td>';
 						inHtml +='<td>'+data[i].apply_content+'</td>';
 						inHtml +='<td>'+data[i].lab_id+'</td>';
 						inHtml +='<td>'+data[i].apply_state+'</td>';

@@ -43,7 +43,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">实验室号</label>
                     <div class="layui-input-block">
-                        <input type="text" name="lab_id" required lay-verify="required" autocomplete="off" class="layui-input u_id" value="${param.lab_id }">
+                        <input type="text" name="lab_id" required lay-verify="required" autocomplete="off" class="layui-input u_id" value="${param.lab_id }" readonly="readonly">
                     </div>
                 </div>
                 <div class="layui-form-item">

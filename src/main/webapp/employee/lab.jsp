@@ -72,16 +72,16 @@
   <i class="layui-edge"></i>
 </div>
 <div class="layui-btn-container">
-  <button class="layui-btn layui-btn-radius layui-btn-normal" id="search-btn">搜索</button> 
+  <button class="layui-btn layui-btn-radius layui-btn-normal" id="search-btn">🔍 搜索</button>
 </div>
 
-<table class="layui-table" id="tb">
+<table class="layui-table" id="tb" style="text-align: center;">
     <thead>
       <tr>
-        <th>实验室号</th>
-        <th>实验室状态</th>
-        <th>负责人</th>
-        <th>操作</th>
+          <th style="text-align: center;">实验室号</th>
+          <th style="text-align: center;">实验室状态</th>
+          <th style="text-align: center;">负责人</th>
+          <th style="text-align: center;">操作</th>
       </tr> 
     </thead>
     <tbody id="content">
@@ -102,7 +102,7 @@
 					inHtml +='<tr><td>'+data[i].lab_id+'</td>';
 					inHtml +='<td>'+data[i].lab_state+'</td>';
 					inHtml +='<td>'+data[i].lab_man+'</td>';
-					inHtml +='<td><a href="apply_lab.jsp?&lab_id='+data[i].lab_id+'" id="edit" class="layui-btn layui-btn-big">申请</a></td></tr>';
+					inHtml +='<td><a href="apply_lab.jsp?&lab_id='+data[i].lab_id+'" id="edit" class="layui-btn layui-btn-big">🤱 申请</a></td></tr>';
 				}
 				$("#content").html(inHtml);
 			},
@@ -125,7 +125,7 @@
 						inHtml +='<tr><td>'+data[i].lab_id+'</td>';
 						inHtml +='<td>'+data[i].lab_state+'</td>';
 						inHtml +='<td>'+data[i].lab_man+'</td>';
-						inHtml +='<td><a href="apply_lab.jsp?&id='+data[i].lab_id+'" id="edit" class="layui-btn layui-btn-big">申请</a></td></tr>';
+						inHtml +='<td><a href="apply_lab.jsp?&id='+data[i].lab_id+'" id="edit" class="layui-btn layui-btn-big">🤱 申请</a></td></tr>';
 					}
 					$("#content").html(inHtml);
 				},

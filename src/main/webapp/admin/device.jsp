@@ -72,17 +72,17 @@
   <i class="layui-edge"></i>
 </div>
 <div class="layui-btn-container">
-  <button class="layui-btn layui-btn-radius layui-btn-normal" id="search-btn">搜索</button> 
-  <a href="device_add.jsp" class="layui-btn layui-btn-radius layui-btn-normal" id="add-btn">新增设备信息</a>
+  <button class="layui-btn layui-btn-radius layui-btn-normal" id="search-btn">🔍 搜索</button>
+  <a href="device_add.jsp" class="layui-btn layui-btn-radius layui-btn-normal" id="add-btn">⚙️新增设备信息</a>
 </div>
 
-<table class="layui-table" id="tb">
+<table class="layui-table" id="tb" style="text-align: center;">
     <thead>
       <tr>
-        <th>设备名</th>
-        <th>购入时间</th>
-        <th>设备状态</th>
-        <th>操作</th>
+          <th style="text-align: center;">设备名</th>
+          <th style="text-align: center;">购入时间</th>
+          <th style="text-align: center;">设备状态</th>
+          <th style="text-align: center;">操作</th>
       </tr> 
     </thead>
     <tbody id="content">
@@ -100,10 +100,12 @@
 			success: function(data){
 				var inHtml="";
 				for(var i=0;i<data.length;i++){
+                    var date = new Date(data[i].device_time);
 					inHtml +='<tr><td>'+data[i].device_name+'</td>';
-					inHtml +='<td>'+data[i].device_time+'</td>';
+                    inHtml += '<td>' + date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日 ' + date.getHours() +
+                        '时' + date.getMinutes() + '分' + date.getTime() % 60000 / 1000 + '秒' + '</td>';
 					inHtml +='<td>'+data[i].device_state+'</td>';
-					inHtml +='<td><a href="device_edit.jsp?&device_name='+data[i].device_name+'&device_time='+data[i].device_time+'&device_state='+data[i].device_state+'" id="edit" class="layui-btn layui-btn-big">编辑</a><a href="../user/deleteDevice.action?&device_id='+data[i].device_id+'" id="edit" class="layui-btn layui-btn-big">删除</a></td></tr>';
+					inHtml +='<td><a href="device_edit.jsp?&device_id='+data[i].device_id+'&device_name='+data[i].device_name+'&device_time='+data[i].device_time+'&device_state='+data[i].device_state+'" id="edit" class="layui-btn layui-btn-big">🔨 编辑</a><a href="../user/deleteDevice.action?&device_id='+data[i].device_id+'" id="edit" class="layui-btn layui-btn-danger">🔪 删除</a></td></tr>';
 				}
 				$("#content").html(inHtml);
 			},
@@ -123,10 +125,12 @@
 				success: function(data){
 					var inHtml="";
 					for(var i=0;i<data.length;i++){
+                        var date = new Date(data[i].device_time);
 						inHtml +='<tr><td>'+data[i].device_name+'</td>';
-						inHtml +='<td>'+data[i].device_time+'</td>';
+                        inHtml += '<td>' + date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日 ' + date.getHours() +
+                            '时' + date.getMinutes() + '分' + date.getTime() % 60000 / 1000 + '秒' + '</td>';
 						inHtml +='<td>'+data[i].device_state+'</td>';
-						inHtml +='<td><a href="device_edit.jsp?&device_name='+data[i].device_name+'&device_time='+data[i].device_time+'&device_state='+data[i].device_state+'" id="edit" class="layui-btn layui-btn-big">编辑</a><a href="../user/deleteDevice.action?&device_id='+data[i].device_id+'" id="edit" class="layui-btn layui-btn-big">删除</a></td></tr>';
+						inHtml +='<td><a href="device_edit.jsp?&device_id='+data[i].device_id+'&device_name='+data[i].device_name+'&device_time='+data[i].device_time+'&device_state='+data[i].device_state+'" id="edit" class="layui-btn layui-btn-big">🔨 编辑</a><a href="../user/deleteDevice.action?&device_id='+data[i].device_id+'" id="edit" class="layui-btn layui-btn-danger">🔪 删除</a></td></tr>';
 					}
 					$("#content").html(inHtml);
 				},

@@ -67,4 +67,14 @@ public class ApplyServiceImpl implements ApplyService {
 	public void notPassApplyDevice(int apply_id, String deal_man) {
 		applyDao.notPassApplyDevice(apply_id, deal_man);
 	}
+
+	@Override
+	public int labCount() {
+		return applyDao.labCount();
+	}
+
+	@Override
+	public int deviceCount() {
+		return applyDao.deviceCount();
+	}
 }

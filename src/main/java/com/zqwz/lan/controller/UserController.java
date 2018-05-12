@@ -30,11 +30,6 @@ public class UserController {
 
     private HttpSession httpSession;
 
-    @RequestMapping("/start.action")
-    public String start(){
-        return "login";
-    }
-
     /**
      * 判断用户的类型
      * @param request
@@ -375,6 +370,26 @@ public class UserController {
     @RequestMapping(value="/updateLab.action")
     public String updateLab(Lab lab) {
         labService.updateLab(lab);
-        return "admin/lab";
+        return "redirect:../admin/lab.jsp";
+    }
+
+    /**
+     * 统计本系统实验室借出总次数
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/labCount.action")
+    public int labCount(){
+        return applyService.labCount();
+    }
+
+    /**
+     * 统计本系统设备借出总次数
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/deviceCount.action")
+    public int deviceCount(){
+        return applyService.deviceCount();
     }
 }

@@ -22,4 +22,8 @@ public interface ApplyService {
 	public void passApplyDevice(int apply_id, String deal_man);
 
 	public void notPassApplyDevice(int apply_id, String deal_man);
+
+	public int labCount();
+
+	public int deviceCount();
 }
