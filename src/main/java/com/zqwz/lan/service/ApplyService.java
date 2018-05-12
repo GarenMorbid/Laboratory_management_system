@@ -2,6 +2,7 @@ package com.zqwz.lan.service;
 
 import com.zqwz.lan.entity.ApplyDevice;
 import com.zqwz.lan.entity.ApplyLab;
+import com.zqwz.lan.entity.DateCount;
 
 import java.util.List;
 
@@ -26,4 +27,8 @@ public interface ApplyService {
 	public int labCount();
 
 	public int deviceCount();
+
+    public List<DateCount> labDateCount();
+
+	public List<DateCount> deviceDateCount();
 }

@@ -61,7 +61,6 @@
             width: auto;
             height: auto;
             z-index: -100;
-            background: url(Images/Desert.png) no-repeat;
             background-size: cover;
         }
         
@@ -101,7 +100,7 @@
             <p><button id="login" type="button">登录</button></p>
         </div>
     </form>
-    <video autoplay loop poster="Images/Desert.png" id="bgvid"> 
+    <video autoplay="autoplay" loop="loop" id="bgvid">
 		<source src="video/movie.mp4" type="video/mp4" id="source1">
     </video>
     <script>

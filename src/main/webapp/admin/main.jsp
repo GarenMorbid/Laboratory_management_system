@@ -68,8 +68,8 @@
                  	<li class="layui-nav-item layui-nav-itemed">
                         <a href="javascript:;">📋 统计报表</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="../admin/charts_lab.jsp" target="main">📋 实验室历史借用总次数</a></dd>
-                            <dd><a href="../admin/charts_device.jsp" target="main">📋 设备历史借用总次数</a></dd>
+                            <dd><a href="../admin/charts_lab.jsp" target="main">📋 实验室统计报表</a></dd>
+                            <dd><a href="../admin/charts_device.jsp" target="main">📋 设备统计报表</a></dd>
                         </dl>
                  	</li>
                 </ul>
@@ -91,7 +91,6 @@
         //JavaScript代码区域
         layui.use('element', function() {
             var element = layui.element;
-
         });
 
         $.ajax({
@@ -114,6 +113,12 @@
                     icon: 2
                 });
             }
+        });
+
+        layer.open({
+            title: '系统公告',
+            content: '请及时审批用户申请！',
+            icon: 6
         });
     </script>
 </body>

@@ -4,10 +4,14 @@ package com.zqwz.lan.service.impl;
 import com.zqwz.lan.dao.ApplyDao;
 import com.zqwz.lan.entity.ApplyDevice;
 import com.zqwz.lan.entity.ApplyLab;
+import com.zqwz.lan.entity.DateCount;
 import com.zqwz.lan.service.ApplyService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -23,6 +27,8 @@ public class ApplyServiceImpl implements ApplyService {
 	public void setApplyDao(ApplyDao applyDao) {
 		this.applyDao = applyDao;
 	}
+
+	private SimpleDateFormat dft = new SimpleDateFormat("yyyy-MM-dd");
 
 	@Override
 	public void submitApplyLab(ApplyLab applyLab) {
@@ -76,5 +82,39 @@ public class ApplyServiceImpl implements ApplyService {
 	@Override
 	public int deviceCount() {
 		return applyDao.deviceCount();
+	}
+
+	@Override
+	public List<DateCount> labDateCount() {
+		String dates = "";
+		List<DateCount> dateCounts = new ArrayList<DateCount>();
+		Date nowDate = new Date();
+		Calendar date = Calendar.getInstance();
+		for(int i = 0;i<7;i++){
+			dates = dft.format(nowDate).toString();
+			DateCount dateCount = new DateCount(dates,applyDao.labDateCount(dates));
+			dateCounts.add(dateCount);
+
+			date.set(Calendar.DATE, date.get(Calendar.DATE) - 1);
+			nowDate = date.getTime();
+		}
+		return dateCounts;
+	}
+
+	@Override
+	public List<DateCount> deviceDateCount() {
+		String dates = "";
+		List<DateCount> dateCounts = new ArrayList<DateCount>();
+		Date nowDate = new Date();
+		Calendar date = Calendar.getInstance();
+		for(int i = 0;i<7;i++){
+			dates = dft.format(nowDate).toString();
+			DateCount dateCount = new DateCount(dates,applyDao.deviceDateCount(dates));
+			dateCounts.add(dateCount);
+
+			date.set(Calendar.DATE, date.get(Calendar.DATE) - 1);
+			nowDate = date.getTime();
+		}
+		return dateCounts;
 	}
 }

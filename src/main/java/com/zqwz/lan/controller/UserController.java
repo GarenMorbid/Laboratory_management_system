@@ -392,4 +392,26 @@ public class UserController {
     public int deviceCount(){
         return applyService.deviceCount();
     }
+
+    /**
+     * 统计近7日实验室借出次数
+     * @return dateCounts
+     */
+    @ResponseBody
+    @RequestMapping(value = "/labDateCount.action")
+    public List<DateCount> labDateCount(){
+        List<DateCount> dateCounts = applyService.labDateCount();
+        return dateCounts;
+    }
+
+    /**
+     * 统计近7日设备借出次数
+     * @return dateCounts
+     */
+    @ResponseBody
+    @RequestMapping(value = "/deviceDateCount.action")
+    public List<DateCount> deviceDateCount(){
+        List<DateCount> dateCounts = applyService.deviceDateCount();
+        return dateCounts;
+    }
 }

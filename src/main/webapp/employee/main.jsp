@@ -101,6 +101,12 @@
                 });
             }
         });
+
+        layer.open({
+            title: '系统公告',
+            content: '现在还有空闲教室可以申请！',
+            icon: 6
+        });
     </script>
 </body>
 

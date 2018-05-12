@@ -27,4 +27,8 @@ public interface ApplyDao {
     public int labCount();
 
 	public int deviceCount();
+
+    public int labDateCount(String dates);
+
+	public int deviceDateCount(String dates);
 }

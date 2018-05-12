@@ -55,7 +55,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">申请时间</label>
                     <div class="layui-input-block">
-                        <input type="text" name="use_time" required lay-verify="required" placeholder="请输入申请时间" autocomplete="off" class="layui-input u_id">
+                        <input type="text" name="use_time" id="date" lay-verify="date" placeholder="请输入申请时间" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -74,4 +74,15 @@
         </div>
 </fieldset>
 </body>
+<script type="text/javascript">
+    //日期layui
+    layui.use('laydate', function() {
+        var laydate = layui.laydate;
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#date', //指定元素
+            type: 'date'
+        });
+    });
+</script>
 </html>

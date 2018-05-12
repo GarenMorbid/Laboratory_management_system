@@ -13,22 +13,25 @@
 		width: 500px;
 		height: 500px;
 		display: inline-block;
-		margin-left: 29%;
+		margin-left: 3%;
 	}
 </style>
 </head>
 <body>
 	<div class="divFrom" id="firstForm"></div>
+	<div class="divFrom" id="secondForm"></div>
 </body>
 <script type="text/javascript">
     $(function() {
-        var myChart = echarts.init(document.getElementById('firstForm'));
+        var myChart_first = echarts.init(document.getElementById('firstForm'));
+        var myChart_second = echarts.init(document.getElementById('secondForm'));
+
         $.ajax({
             url: "../user/labCount.action",
             type: "post",
             dataType: "json",
             success: function (data) {
-                option = {
+                option_first = {
                     title: {
                         text: '龙虎榜,实验室借出量',
                         left: 'center',
@@ -66,7 +69,58 @@
                         }
                     }],
                 }
-                myChart.setOption(option);
+                myChart_first.setOption(option_first);
+            }
+        });
+
+        $.ajax({
+            url: "../user/labDateCount.action",
+            type: "post",
+            dataType: "json",
+            success: function (data) {
+                option_second = {
+                    title : {
+                        text: '近7日实验室借出量'
+                    },
+                    tooltip : {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data:['近7日实验室借出量']
+                    },
+                    toolbox: {
+                        show : true,
+                        feature : {
+                            mark : {show: true},
+                            dataView : {show: true, readOnly: false},
+                            magicType : {show: true, type: ['line', 'bar']},
+                            restore : {show: true},
+                            saveAsImage : {show: true}
+                        }
+                    },
+                    calculable : true,
+                    xAxis : [
+                        {
+                            type : 'category',
+                            boundaryGap : false,
+                            data : [data[6].date,data[5].date,data[4].date,data[3].date,data[2].date,data[1].date,data[0].date]
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value'
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'借出量',
+                            type:'line',
+                            stack: '总量',
+                            data:[data[6].count, data[5].count, data[4].count, data[3].count, data[2].count, data[1].count, data[0].count]
+                        }
+                    ]
+                };
+                myChart_second.setOption(option_second);
             }
         });
     });
