@@ -13,7 +13,7 @@
 	</select>
 	<update id="passApplyLab">
 		update applylab set apply_state = "通过", deal_man = #{deal_man} where apply_id = #{apply_id};
-		update lab set lab_state = "已借出" where lab_id = (select lab_id from applydevice where apply_id = #{apply_id});
+		update lab set lab_state = "已借出" where lab_id = (select lab_id from applylab where apply_id = #{apply_id});
 	</update>
 	<update id="notPassApplyLab">
 		update applylab set apply_state = "申请不通过", deal_man = #{deal_man} where apply_id = #{apply_id};
