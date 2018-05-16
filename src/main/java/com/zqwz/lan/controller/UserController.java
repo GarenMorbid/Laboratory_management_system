@@ -347,7 +347,7 @@ public class UserController {
     @RequestMapping(value="/addLab.action")
     public String addLab(Lab lab) {
         labService.addLab(lab);
-        return "admin/lab";
+        return "redirect:../admin/lab.jsp";
     }
 
     /**

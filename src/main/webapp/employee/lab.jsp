@@ -125,7 +125,7 @@
 						inHtml +='<tr><td>'+data[i].lab_id+'</td>';
 						inHtml +='<td>'+data[i].lab_state+'</td>';
 						inHtml +='<td>'+data[i].lab_man+'</td>';
-						inHtml +='<td><a href="apply_lab.jsp?&id='+data[i].lab_id+'" id="edit" class="layui-btn layui-btn-big">🤱 申请</a></td></tr>';
+						inHtml +='<td><a href="apply_lab.jsp?&lab_id='+data[i].lab_id+'" id="edit" class="layui-btn layui-btn-big">🤱 申请</a></td></tr>';
 					}
 					$("#content").html(inHtml);
 				},

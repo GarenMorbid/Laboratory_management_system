@@ -129,7 +129,7 @@
                         inHtml += '<td>' + date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日 ' + date.getHours() +
                             '时' + date.getMinutes() + '分' + date.getTime() % 60000 / 1000 + '秒' + '</td>';
 						inHtml +='<td>'+data[i].device_state+'</td>';
-						inHtml +='<td><a href="apply_device.jsp?&id='+data[i].device_id+'" id="edit" class="layui-btn layui-btn-big">🤱 申请</a></td></tr>';
+						inHtml +='<td><a href="apply_device.jsp?&device_id='+data[i].device_id+'" id="edit" class="layui-btn layui-btn-big">🤱 申请</a></td></tr>';
 					}
 					$("#content").html(inHtml);
 				},
